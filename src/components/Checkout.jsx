@@ -39,6 +39,9 @@ function Checkout({ car, paymentMethod, currency, usdRate, gbpRate, eurRate, onC
   const fakeBtcAddress = 'bc1pv68x4f6dfktsppwle2dcjyxmd6ademdtcc4mrw90aeyf6k2p28zstxnvxr';
   // this is just fake since lightning invoices expire too frequently to use a working one
   const fakeLightningInvoice = 'lnbc1p3s7x8qpp5x9k8zv4q3j9k8zv4q3j9k8zv4q3j9k8zv4q3j9k8zv4q3j9k';
+  
+  // use the URI identifier for bitcoin
+  const bitcoinUri = `bitcoin:${fakeBtcAddress}`;
 
   const fiatPrice = (() => {
     switch (currency) {
@@ -431,9 +434,9 @@ function Checkout({ car, paymentMethod, currency, usdRate, gbpRate, eurRate, onC
             </p>
             <div className="flex justify-center mb-4">
               {paymentMethod === 'Bitcoin' ? (
-                <QRCode value={fakeBtcAddress} size={128} />
+                <QRCode value={bitcoinUri} size={256} />
               ) : (
-                <QRCode value={fakeLightningInvoice} size={128} />
+                <QRCode value={fakeLightningInvoice} size={256} />
               )}
             </div>
             <p className="text-gray-700 dark:text-gray-300 mb-4 break-all font-inter">
