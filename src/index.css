@@ -1,0 +1,88 @@
+/* add some cool new fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom fade-in animation for header */
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+  }
+}
+
+/* Custom fade-in animation for cards */
+@layer utilities {
+  @keyframes cardFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-cardFadeIn {
+    animation: cardFadeIn 0.5s ease-out forwards;
+  }
+}
+
+/* Optimize hover transitions */
+@layer utilities {
+  .transition-transform {
+    transition-property: transform, box-shadow, z-index;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+}
+
+/* Modal backdrop */
+@layer utilities {
+  .bg-black.bg-opacity-50 {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Dark mode variables */
+:root {
+  --background: #f3f4f6; /* Light mode bg-gray-100 */
+  --card-bg: #ffffff; /* Light mode card bg-white */
+  --text: #374151; /* Light mode text-gray-700 */
+}
+
+.dark {
+  --background: #1f2937; /* Dark mode bg-gray-800 */
+  --card-bg: #374151; /* Dark mode bg-gray-700 */
+  --text: #d1d5db; /* Dark mode text-gray-300 */
+}
+
+/* trying to get flags to work next to phone numbers in checkout */
+.emoji-flag {
+  font-family: 'Noto Color Emoji', sans-serif;
+}
+
+:root {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
