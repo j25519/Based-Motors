@@ -35,7 +35,9 @@ function Checkout({ car, paymentMethod, currency, usdRate, gbpRate, eurRate, onC
     }
   }, [step, invoiceNumber]);
 
-  const fakeBtcAddress = '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa';
+  // this is actually my Bitcoin wallet, zap me daddy
+  const fakeBtcAddress = 'bc1pv68x4f6dfktsppwle2dcjyxmd6ademdtcc4mrw90aeyf6k2p28zstxnvxr';
+  // this is just fake since lightning invoices expire too frequently to use a working one
   const fakeLightningInvoice = 'lnbc1p3s7x8qpp5x9k8zv4q3j9k8zv4q3j9k8zv4q3j9k8zv4q3j9k8zv4q3j9k';
 
   const fiatPrice = (() => {
